@@ -9,9 +9,11 @@ build/
 local.properties
 
 # APK files
-*.apk
 *.aab
 *.ap_
+
+# Allow release APKs in releases/
+!releases/*.apk
 
 # Generated files
 app/build/

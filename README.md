@@ -2,6 +2,15 @@
 
 An Android app that captures and preserves all your phone notifications, even after you dismiss them. Built for sideloading on OnePlus 15 (OxygenOS 16.0.2).
 
+## Download
+
+[**Download Notification Hub v1.0.0 (Release APK)**](releases/notification-hub-release.apk)
+
+Install via ADB:
+```bash
+adb install notification-hub-release.apk
+```
+
 ## What It Does
 
 - Captures every notification your phone receives in real-time
