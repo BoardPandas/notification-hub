@@ -4,7 +4,7 @@ An Android app that captures and preserves all your phone notifications, even af
 
 ## Download
 
-[**Download Notification Hub v1.0.0 (Release APK)**](https://raw.githubusercontent.com/BoardPandas/notification-hub/main/releases/notification-hub-release.apk)
+[**Download Notification Hub v1.0.1 (Release APK)**](https://raw.githubusercontent.com/BoardPandas/notification-hub/main/releases/notification-hub-release.apk)
 
 Install via ADB:
 ```bash

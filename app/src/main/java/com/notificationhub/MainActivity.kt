@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -25,15 +26,20 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        val themePreferences = (application as NotificationHubApp).themePreferences
+
         setContent {
-            NotificationHubTheme {
+            val themeMode by themePreferences.themeMode.collectAsState()
+
+            NotificationHubTheme(themeMode = themeMode) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     NotificationListScreen(
                         hasPermission = hasPermission,
-                        onRequestPermission = { openNotificationListenerSettings() }
+                        onRequestPermission = { openNotificationListenerSettings() },
+                        themePreferences = themePreferences
                     )
                 }
             }
