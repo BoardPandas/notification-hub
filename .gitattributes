@@ -1,0 +1,7 @@
+# Mark binary files so Git doesn't corrupt them with line ending conversion
+*.apk binary
+*.png binary
+*.jpg binary
+*.webp binary
+*.keystore binary
+*.jks binary
