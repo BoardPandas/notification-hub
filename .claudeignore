@@ -1,20 +1,14 @@
-# Dependencies
-node_modules/
-.venv/
-vendor/
-
-# Build output
-dist/
+# Gradle cache and build output
+.gradle/
 build/
-.next/
-out/
+app/build/
 
-# Secrets and credentials
-.env
-.env.*
-secrets/
-*.pem
-*.key
+# Generated files
+app/release/
+
+# Signing keys
+*.jks
+*.keystore
 
 # IDE settings
 .idea/
