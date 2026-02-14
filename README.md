@@ -11,6 +11,14 @@ Install via ADB:
 adb install notification-hub-release.apk
 ```
 
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/dark-mode.jpg" width="300" alt="Dark mode" />
+  &nbsp;&nbsp;
+  <img src="screenshots/light-mode.jpg" width="300" alt="Light mode" />
+</p>
+
 ## What It Does
 
 - Captures every notification your phone receives in real-time
