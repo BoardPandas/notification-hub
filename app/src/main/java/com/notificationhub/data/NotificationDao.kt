@@ -18,6 +18,12 @@ interface NotificationDao {
     @Query("DELETE FROM notifications WHERE timestamp < :before")
     suspend fun deleteOlderThan(before: Long)
 
+    @Query("DELETE FROM notifications WHERE id = :id")
+    suspend fun deleteById(id: Long)
+
+    @Query("SELECT DISTINCT appName FROM notifications WHERE timestamp >= :since ORDER BY appName ASC")
+    fun getAppNamesSince(since: Long): Flow<List<String>>
+
     @Query("SELECT COUNT(*) FROM notifications")
     suspend fun count(): Int
 }

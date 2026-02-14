@@ -4,7 +4,6 @@ import android.app.Notification
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import com.notificationhub.NotificationHubApp
-import com.notificationhub.data.NotificationEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -19,27 +18,16 @@ class NotificationCaptureService : NotificationListenerService() {
     override fun onNotificationPosted(sbn: StatusBarNotification?) {
         sbn ?: return
 
-        // Skip our own notifications
-        if (sbn.packageName == packageName) return
-
         val notification = sbn.notification ?: return
         val extras = notification.extras ?: return
 
         val title = extras.getCharSequence(Notification.EXTRA_TITLE)?.toString() ?: ""
         val text = extras.getCharSequence(Notification.EXTRA_TEXT)?.toString() ?: ""
 
-        // Skip empty notifications
-        if (title.isBlank() && text.isBlank()) return
+        if (!shouldCapture(sbn.packageName, packageName, title, text)) return
 
         val appName = getAppName(sbn.packageName)
-
-        val entity = NotificationEntity(
-            packageName = sbn.packageName,
-            appName = appName,
-            title = title,
-            text = text,
-            timestamp = sbn.postTime
-        )
+        val entity = createEntity(sbn.packageName, appName, title, text, sbn.postTime)
 
         scope.launch {
             try {

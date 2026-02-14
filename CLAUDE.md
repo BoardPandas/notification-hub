@@ -14,9 +14,9 @@ Android app that captures and stores all phone notifications for 7-day review. S
 - **UI**: Jetpack Compose + Material Design 3
 - **Database**: Room (SQLite)
 - **Architecture**: ViewModel + Kotlin Flow
-- **Build**: Gradle 8.11 + AGP 8.7
+- **Build**: Gradle 9.3.1 + AGP 9.0.1
 - **Min SDK**: 29 (Android 10)
-- **Target SDK**: 35 (Android 15)
+- **Target SDK**: 36 (Android 16)
 - **Target Device**: OnePlus 15, OxygenOS 16.0.2
 
 ## Key Commands
@@ -74,7 +74,10 @@ app/src/main/java/com/notificationhub/
 │   ├── NotificationDao.kt
 │   └── NotificationDatabase.kt
 ├── service/                        # Background services
-│   └── NotificationCaptureService.kt
+│   ├── NotificationCaptureService.kt
+│   └── NotificationExtractor.kt
+├── util/                           # Pure utility functions
+│   └── NotificationGrouping.kt
 ├── ui/                             # Jetpack Compose UI
 │   ├── theme/                      # Color, Theme, Typography
 │   ├── screens/                    # Full-screen composables
