@@ -1,15 +1,18 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-
   "plansDirectory": ".claude/plans",
   "respectGitignore": true,
-
   "permissions": {
     "allow": [
       "Read",
+      "Edit",
+      "Write",
       "Glob",
       "Grep",
-      "Bash(./gradlew *)",
+      "WebFetch",
+      "WebSearch",
+      "Task",
+      "Bash(./gradlew*)",
       "Bash(adb *)",
       "Bash(git *)"
     ],
@@ -18,6 +21,22 @@
       "Read(./.env.*)",
       "Read(./secrets/**)",
       "Read(./app/release/**)"
+    ]
+  },
+  "env": {
+    "ENABLE_TOOL_SEARCH": "true"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash(git commit*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Committing changes...'"
+          }
+        ]
+      }
     ]
   }
 }

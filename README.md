@@ -35,7 +35,7 @@ adb install notification-hub-release.apk
 - **Database**: Room (SQLite)
 - **Architecture**: ViewModel + Flow
 - **Min SDK**: 29 (Android 10)
-- **Target SDK**: 35 (Android 15)
+- **Target SDK**: 36 (Android 16)
 
 ## How It Works
 
@@ -124,6 +124,16 @@ app/src/main/java/com/notificationhub/
 # Lint check
 ./gradlew lint
 ```
+
+## Claude Code
+
+This project includes a `.claude/` folder with skills, agents, and settings for [Claude Code](https://claude.com/claude-code).
+
+**Slash commands:** `/build-and-fix`, `/code-review`, `/security-scan`, `/performance-review`, `/dependency-audit`, `/test-scaffold`, `/doc-sync`, `/dev-docs`, `/init-repo`, `/update-practices`
+
+**Agents:** architect, reviewer, security, performance, build-error-resolver, code-architecture-reviewer, production-principles-enforcer, strategic-plan-architect
+
+See [instructions.md](instructions.md) for full usage details.
 
 ## License
 

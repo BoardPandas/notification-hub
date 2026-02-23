@@ -105,17 +105,36 @@ app/src/main/java/com/notificationhub/
 
 ## Skills & Commands
 
+### Slash commands (user-invocable)
+- `/build-and-fix` - Run Gradle build and fix all errors
+- `/code-review [path]` - Full code review with severity-ranked findings
+- `/security-scan [path]` - OWASP Top 10, secrets detection, dependency vulnerabilities
+- `/performance-review [path]` - Bottleneck analysis, Room queries, Compose recomposition
+- `/dependency-audit` - Outdated versions, vulnerabilities, unused packages
+- `/test-scaffold [path]` - Generate test files for untested modules
+- `/doc-sync` - Synchronize documentation with codebase
 - `/dev-docs [task]` - Create strategic implementation plan
 - `/dev-docs-update` - Update plan with progress
-- `/build-and-fix` - Run Gradle build and fix all errors
-- `/code-review` - Architecture review against best practices
+- `/init-repo` - Build or rebuild `.claude/` folder configuration
+- `/update-practices` - Fetch latest Claude Code best practices
 
-Core skills (auto-activate when relevant):
+### Core skills (auto-activate when relevant)
 - `android-dev-guidelines` - Android/Kotlin development principles
 - `compose-ui-guidelines` - Jetpack Compose UI patterns
 - `production-principles` - Anti-over-engineering + production quality
 - `security-practices` - Permissions, data safety
 - `tdd-workflow` - Test-Driven Development workflow
+- `skill-developer` - Meta-skill for creating new skills
+
+### Agents
+- `architect` - System design, tech stack decisions, planning (opus, plan mode)
+- `reviewer` - Code review, correctness, naming, DRY (sonnet, plan mode)
+- `security` - Android security analysis, OWASP, secrets (opus, plan mode)
+- `performance` - Room queries, Compose recomposition, memory (sonnet, plan mode)
+- `build-error-resolver` - Fix Kotlin/Android compilation errors
+- `code-architecture-reviewer` - MVP principles, TDD compliance
+- `production-principles-enforcer` - Prevent over-engineering
+- `strategic-plan-architect` - MVP implementation plans
 
 ## Environment
 
